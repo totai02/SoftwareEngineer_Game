@@ -1,39 +1,85 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
-	public KeyCode MoveL;
-	public KeyCode MoveR;
-	public float horizVel = 0;
-	public int laneNum=2;
-	public bool moveLocked = false;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		GetComponent<Rigidbody> ().velocity = new Vector3(horizVel, 0, 4);
-		if ((Input.GetKeyDown(MoveL)) && (laneNum > 1) && (moveLocked == false))
-		{
-			horizVel = -2;
-			StartCoroutine(StopSlide());
-			laneNum -= 1;
-			moveLocked = true;
-		}
-		if ((Input.GetKeyDown(MoveR)) && (laneNum < 3) && (moveLocked == false))
-		{
-			horizVel = 2;
-            StartCoroutine(StopSlide());
-			laneNum += 1;
-			moveLocked = true;
-		}
-	}
-	IEnumerator StopSlide() {
-		yield return new WaitForSeconds(.5f);
-		horizVel = 0;
-		moveLocked = false;
-	}
+
+    public int speed = 10;
+    public float jumpForce = 10.0f;
+
+    private bool grounded;
+
+    private Rigidbody rb;
+    private Animator anim;
+    // Use this for initialization
+    void Start () {
+        rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!grounded)
+        {
+            anim.SetBool("isGrounded", true);
+        }
+        grounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
+    }
+
+    public void die()
+    {
+        anim.SetTrigger("isDead");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.x = -speed;
+            rb.velocity = velocity;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.x = speed;
+            rb.velocity = velocity;
+        }
+        else
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.x = 0;
+            rb.velocity = velocity;
+        }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.z = speed;
+            rb.velocity = velocity;
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.z = -speed;
+            rb.velocity = velocity;
+        }
+        else
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.z = 0;
+            rb.velocity = velocity;
+        }
+
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            rb.AddForce(new Vector3(0, jumpForce));
+            anim.SetBool("isGrounded", false);
+            grounded = false;
+        }
+    }
 }
