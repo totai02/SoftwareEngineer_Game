@@ -6,9 +6,14 @@ public class PlayerControl : MonoBehaviour {
     public float jumpForce = 10.0f;
 
     private bool grounded;
+    private int laneNum = 3;
+    private int currentLane = 2;
+    private bool isMoving = false;
 
     private Rigidbody rb;
     private Animator anim;
+
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -47,12 +52,6 @@ public class PlayerControl : MonoBehaviour {
         {
             Vector3 velocity = rb.velocity;
             velocity.x = speed;
-            rb.velocity = velocity;
-        }
-        else
-        {
-            Vector3 velocity = rb.velocity;
-            velocity.x = 0;
             rb.velocity = velocity;
         }
 

@@ -7,11 +7,8 @@ public class SubwayControl : MonoBehaviour {
     public bool isRun = false;
     public int cariage = 1;
 
-    private Rigidbody rb;
-
     public void Start()
     {
-        rb = GetComponent<Rigidbody>();
         initSubway(speed, isRun, cariage); 
     }
 
