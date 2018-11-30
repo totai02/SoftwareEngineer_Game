@@ -54,19 +54,6 @@ public class PlayerControl : MonoBehaviour {
             velocity.x = speed;
             rb.velocity = velocity;
         }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            Vector3 velocity = rb.velocity;
-            velocity.z = speed;
-            rb.velocity = velocity;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            Vector3 velocity = rb.velocity;
-            velocity.z = -speed;
-            rb.velocity = velocity;
-        }
         else
         {
             Vector3 velocity = rb.velocity;
