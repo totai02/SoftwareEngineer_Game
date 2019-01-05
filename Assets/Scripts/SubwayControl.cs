@@ -19,7 +19,7 @@ public class SubwayControl : MonoBehaviour {
         for (int i = 1; i < cariage; i++)
         {
             GameObject copy = Instantiate(body, transform);
-            copy.transform.localPosition = new Vector3(0, 2.5f, bodyLength * i);
+            copy.transform.localPosition = new Vector3(0, 0, bodyLength * i);
         }
     }
 
