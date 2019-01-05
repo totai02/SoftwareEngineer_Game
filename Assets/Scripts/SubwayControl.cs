@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubwayControl : MonoBehaviour {
+public class SubwayControl : ObjectInGame {
     public float speed = 0;
     public bool isRun = false;
-    public int cariage = 1;
+    public int carriage = 1;
 
     public void Start()
     {
-        initSubway(speed, isRun, cariage); 
+        initSubway(speed, isRun, carriage); 
     }
 
-    private void createCariage()
+    public void CreateCarriage()
     { 
         GameObject body = transform.GetChild(1).gameObject;
         float bodyLength = body.GetComponent<MeshRenderer>().bounds.size.z;
-        for (int i = 1; i < cariage; i++)
+        for (int i = 1; i < carriage; i++)
         {
             GameObject copy = Instantiate(body, transform);
             copy.transform.localPosition = new Vector3(0, 0, bodyLength * i);
@@ -27,9 +27,9 @@ public class SubwayControl : MonoBehaviour {
     {
         this.speed = speed;
         this.isRun = isRun;
-        this.cariage = cariage;
+        this.carriage = cariage;
 
-        createCariage();
+        CreateCarriage();
     }
 
     private void Update()
