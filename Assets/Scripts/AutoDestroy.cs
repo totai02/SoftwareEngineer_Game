@@ -5,7 +5,7 @@ using UnityEngine;
 public class AutoDestroy : MonoBehaviour
 {
 
-    private Transform player;
+    protected Transform player;
     public float distanceDestroy = 100.0f;
 
     // Use this for initialization

@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 destLane;
 
-    private float stepWidth = 14;
+    private float stepWidth = 17;
 
     private bool isGrounded;
 

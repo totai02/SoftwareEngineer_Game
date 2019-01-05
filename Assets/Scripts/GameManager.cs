@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         }
 
         Vector3 pos = obj.transform.position;
-        pos.x = -14 + lane * 14;
+        pos.x = -17 + lane * 17;
         pos.z = lanePos[lane] + objLength / 2;
         obj.transform.position = pos;
 
@@ -121,9 +121,7 @@ public class GameManager : MonoBehaviour
         {
             int carriage = objParam / 2 + 1;
             bool isRun = objParam % 2 == 1;
-            obj.GetComponent<SubwayControl>().isRun = isRun;
-            obj.GetComponent<SubwayControl>().carriage = carriage;
-            obj.GetComponent<SubwayControl>().InitSubway(30, isRun, carriage);
+            obj.GetComponent <SubwayControl>().InitSubway(30, isRun, carriage);
         }
         obj.transform.parent = objectContainer;
     }
@@ -171,7 +169,7 @@ public class GameManager : MonoBehaviour
 
             Vector3 pos1 = track.transform.position;
             pos1.z = trackPos;
-            pos1.x = -14;
+            pos1.x = -17;
             trackCopy1.transform.position = pos1;
 
             Vector3 pos2 = track.transform.position;
@@ -180,7 +178,7 @@ public class GameManager : MonoBehaviour
 
             Vector3 pos3 = track.transform.position;
             pos3.z = trackPos;
-            pos3.x = 14;
+            pos3.x = 17;
             trackCopy3.transform.position = pos3;
 
             trackPos += trackLength;
