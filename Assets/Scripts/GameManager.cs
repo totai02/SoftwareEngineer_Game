@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
             bool isRun = objParam % 2 == 1;
             obj.GetComponent<SubwayControl>().isRun = isRun;
             obj.GetComponent<SubwayControl>().carriage = carriage;
-            obj.GetComponent<SubwayControl>().CreateCarriage();
+            obj.GetComponent<SubwayControl>().InitSubway(30, isRun, carriage);
         }
         obj.transform.parent = objectContainer;
     }

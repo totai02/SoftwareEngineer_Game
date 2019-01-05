@@ -7,11 +7,6 @@ public class SubwayControl : ObjectInGame {
     public bool isRun = false;
     public int carriage = 1;
 
-    public void Start()
-    {
-        InitSubway(speed, isRun, carriage); 
-    }
-
     public void CreateCarriage()
     { 
         GameObject body = transform.GetChild(1).gameObject;
