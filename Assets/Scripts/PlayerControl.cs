@@ -22,7 +22,7 @@ public class PlayerControl : MonoBehaviour
 
     private float globalGravity = -9.81f;
 
-    private bool active = true;
+    private bool canMove = true;
 
     private Rigidbody rb;
     private Animator anim;
@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour
     IEnumerator waitAction()
     {
         yield return new WaitForSecondsRealtime(0.3f);
-        active = true;
+        canMove = true;
     }
 
     void GroundCheck()
@@ -70,7 +70,7 @@ public class PlayerControl : MonoBehaviour
         Vector3 vel = rb.velocity;
         vel.y = -50;
         rb.velocity = vel;
-        active = false;
+        canMove = false;
         Invoke("RestartGame", 1.5f);
     }
 
@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour
         v.z = speed;
         rb.velocity = v;
 
-        if (!active) return;
+        if (!canMove) return;
 
         if (Input.GetKeyDown(KeyCode.A) && transform.position.x > -1)
         {
@@ -95,7 +95,7 @@ public class PlayerControl : MonoBehaviour
             destLane.x -= stepWidth;
             anim.SetBool("turn", true);
             anim.SetFloat("turnValue", 0.0f);
-            active = false;
+            canMove = false;
             return;
         }
         else if (Input.GetKeyDown(KeyCode.D) && transform.position.x < 1)
@@ -104,7 +104,7 @@ public class PlayerControl : MonoBehaviour
             destLane.x += stepWidth;
             anim.SetBool("turn", true);
             anim.SetFloat("turnValue", 1.0f);
-            active = false;
+            canMove = false;
             return;
         }
         else
@@ -125,12 +125,12 @@ public class PlayerControl : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, jumpForce));
             isGrounded = false;
-            active = false;
+            canMove = false;
         }
 
         if (Input.GetKey(KeyCode.Escape)) Application.Quit();
 
-        if (!active) StartCoroutine(waitAction());
+        if (!canMove) StartCoroutine(waitAction());
     }
 
     // Update is called once per frame
@@ -160,7 +160,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if (anim.GetBool("turn"))
         {
-            active = true;
+            canMove = true;
             anim.SetBool("turn", false);
         }
     }
