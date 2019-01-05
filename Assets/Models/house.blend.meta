@@ -29,7 +29,17 @@ ModelImporter:
     9500000: //RootNode
     13700000: farm_build_07
     13700002: farm_build_07_tile
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: farm_build_07__farm_build_07_png
+    second: {fileID: 2100000, guid: 2928e310e53e5cb409d65cae84103684, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: farm_build_07_tile__farm_build_07_tile_png
+    second: {fileID: 2100000, guid: a2243ce20ce674d44993fe3a96d14ece, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

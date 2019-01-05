@@ -36,7 +36,22 @@ ModelImporter:
     13700000: farm_build_06
     13700002: farm_build_06_tile
     13700004: Signboard3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fame_build_06__Fame_build_06_png
+    second: {fileID: 2100000, guid: 69235a449cf43634a902a5a483cf68c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fame_build_06_tile__Fame_build_06_tile_png
+    second: {fileID: 2100000, guid: 89bf37d8fc84446469cc21e448e1e227, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate_tex3__plate_tex3_png
+    second: {fileID: 2100000, guid: c2cfa84ab06186943a4c32c5afcefa7d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

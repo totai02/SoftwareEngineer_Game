@@ -9,7 +9,7 @@ public class SubwayControl : ObjectInGame {
 
     public void Start()
     {
-        initSubway(speed, isRun, carriage); 
+        InitSubway(speed, isRun, carriage); 
     }
 
     public void CreateCarriage()
@@ -23,7 +23,7 @@ public class SubwayControl : ObjectInGame {
         }
     }
 
-    public void initSubway(float speed = 10.0f,bool isRun = false, int cariage = 1)
+    public void InitSubway(float speed = 10.0f,bool isRun = false, int cariage = 1)
     {
         this.speed = speed;
         this.isRun = isRun;
