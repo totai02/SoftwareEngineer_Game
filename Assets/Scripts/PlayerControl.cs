@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour {
         else
         {
             Vector3 velocity = rb.velocity;
-            velocity.z = 0;
+            velocity.x = 0;
             rb.velocity = velocity;
         }
 
