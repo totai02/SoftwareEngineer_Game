@@ -180,9 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6ee14c2b9eb394e87e11f98ed6f42a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceDestroy: 300
   speed: 30
   isRun: 1
-  cariage: 5
+  carriage: 1
 --- !u!114 &114849155642867900
 MonoBehaviour:
   m_ObjectHideFlags: 1

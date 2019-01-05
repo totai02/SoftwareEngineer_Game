@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubwayControl : ObjectInGame {
+public class SubwayControl : AutoDestroy {
     public float speed = 0;
     public bool isRun = false;
     public int carriage = 1;
