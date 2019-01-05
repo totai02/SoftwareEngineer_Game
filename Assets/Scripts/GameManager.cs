@@ -45,9 +45,9 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        roadLength = road.GetComponent<MeshRenderer>().bounds.size.z * road.transform.localScale.z;
-        roadWidth = road.GetComponent<MeshRenderer>().bounds.size.x * road.transform.localScale.x;
-        trackLength = track.GetComponent<MeshRenderer>().bounds.size.z * track.transform.localScale.z;
+        roadLength = road.GetComponent<MeshRenderer>().bounds.size.z;
+        roadWidth = road.GetComponent<MeshRenderer>().bounds.size.x;
+        trackLength = track.GetComponent<MeshRenderer>().bounds.size.z;
 
         houseWidth = new float[houses.Length];
         houseLength = new float[houses.Length];
@@ -103,11 +103,11 @@ public class GameManager : MonoBehaviour
         float objLength;
         if (obj.GetComponent<MeshRenderer>() != null)
         {
-            objLength = obj.GetComponent<MeshRenderer>().bounds.size.z * obj.transform.localScale.z;
+            objLength = obj.GetComponent<MeshRenderer>().bounds.size.z;
         }
         else
         {
-            objLength = obj.GetComponentInChildren<MeshRenderer>().bounds.size.z * obj.transform.GetChild(0).localScale.z;
+            objLength = obj.GetComponentInChildren<MeshRenderer>().bounds.size.z;
         }
 
         Vector3 pos = obj.transform.position;
