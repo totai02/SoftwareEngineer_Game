@@ -8,7 +8,7 @@ public class HeadSubway : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponent<PlayerControl>().die();
+            collision.gameObject.GetComponent<PlayerControl>().Die();
         }
     }
 }
