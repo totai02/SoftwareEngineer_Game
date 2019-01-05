@@ -39,7 +39,7 @@ public class SubwayControl : AutoDestroy {
 
     private void Update()
     {
-        if (run)
+        if (run && isRun)
         {
             transform.position = transform.position - Vector3.forward * speed * Time.deltaTime;
         }

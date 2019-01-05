@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerKiller : AutoDestroy {
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>().Die();
+        if (collision.gameObject.name == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerControl>().Die();
+            if (transform.parent.GetComponent<SubwayControl>())
+            {
+                transform.parent.GetComponent<SubwayControl>().isRun = false;
+            }
+        }
     }
 }
