@@ -800,7 +800,7 @@ MonoBehaviour:
   speed: 50
   turnSpeed: 50
   jumpForce: 2000
-  gravityScale: 6
+  gravityScale: 5
   groundCheck: {fileID: 131719364}
   frontCheck: {fileID: 1612338054}
 --- !u!136 &912626432
@@ -1415,6 +1415,11 @@ Prefab:
     - target: {fileID: 1517911822991268, guid: 8e9ce1f7f8c98414f8addc1d89604f76, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114351062431940484, guid: 8e9ce1f7f8c98414f8addc1d89604f76,
+        type: 2}
+      propertyPath: gravityScale
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9ce1f7f8c98414f8addc1d89604f76, type: 2}
