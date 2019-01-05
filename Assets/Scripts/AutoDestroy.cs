@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectInGame : MonoBehaviour
+public class AutoDestroy : MonoBehaviour
 {
 
-    public Transform player;
-    public float distance = 70f;
+    private Transform player;
+    public float distanceDestroy = 100.0f;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player").transform;
         StartCoroutine(Destroy());
@@ -18,7 +18,7 @@ public class ObjectInGame : MonoBehaviour
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => player.position.z > transform.position.z + distance);
+        yield return new WaitUntil(() => player.position.z > transform.position.z + distanceDestroy);
         Destroy(gameObject);
     }
 }
