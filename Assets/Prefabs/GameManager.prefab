@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1758768175268920}
+  m_IsPrefabAsset: 1
+--- !u!1 &1758768175268920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4086924559176686}
+  - component: {fileID: 114209798454247458}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4086924559176686
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758768175268920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114209798454247458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758768175268920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e0913959b482e42aeb20fcbda40b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roadContainer: {fileID: 4913432428597116, guid: f3b7e1f1951232b4096fc8b902c98862,
+    type: 2}
+  objectContainer: {fileID: 4388908084414058, guid: bba18c118f41c0a43950f27e71b40b6a,
+    type: 2}
+  houseContainer: {fileID: 4207153954743434, guid: 787ca4e30269893498ddd1a063cf7642,
+    type: 2}
+  player: {fileID: 4549038509393386, guid: 8faa37bb2add6664da1d4245c1c4636a, type: 2}
+  road: {fileID: 1750502709400330, guid: da3e7f8df8bacfc43bdabbf36e317904, type: 2}
+  objects:
+  - {fileID: 1122176842157084, guid: 91aa1bb988b4b55478b9b6f0d194a212, type: 2}
+  - {fileID: 1175933637165920, guid: 079c5fe3625c4aa48891a5a2f6aaa0a9, type: 2}
+  - {fileID: 1088369704388342, guid: ab1ea74ff6b45c44e9c31430fbfa81e9, type: 2}
+  - {fileID: 1307604539327278, guid: 7ae84902777083b4b8090782766fc1be, type: 2}
+  - {fileID: 1779506289314688, guid: 45e485c8795a4444db4bb30007441949, type: 2}
+  track: {fileID: 1011349348550412, guid: a7a893ef44c91be4fab936e987251887, type: 2}
+  houses:
+  - {fileID: 1103719406061744, guid: 5fd04c3a6d8eeaa478d1ab5021c78854, type: 2}
+  - {fileID: 1281223604200146, guid: 4e9a2dc62b9e8f542bc77d6e8709ed1a, type: 2}
+  - {fileID: 1890216584677984, guid: fd68aea0aa765164398553044f0a0803, type: 2}
+  - {fileID: 1101726133000200, guid: b399119fea31b0244a7bff47cc5cbe9e, type: 2}
+  generateDistance: 1000
+  unitSize: 30

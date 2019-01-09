@@ -877,6 +877,10 @@ MonoBehaviour:
   gravityScale: 6
   groundCheck: {fileID: 4163920447117286}
   frontCheck: {fileID: 4980125438445052}
+  destLane: {x: 0, y: 0, z: 0}
+  stepWidth: 17
+  canMove: 1
+  anim: {fileID: 0}
 --- !u!136 &136878325918935796
 CapsuleCollider:
   m_ObjectHideFlags: 1

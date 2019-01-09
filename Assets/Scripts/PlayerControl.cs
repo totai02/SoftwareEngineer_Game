@@ -14,18 +14,18 @@ public class PlayerControl : MonoBehaviour
     public Transform groundCheck;
     public Transform frontCheck;
 
-    private Vector3 destLane;
+    public Vector3 destLane;
 
-    private float stepWidth = 17;
+	public float stepWidth = 17;
 
     private bool isGrounded;
 
     private float globalGravity = -9.81f;
 
-    private bool canMove = true;
+	public bool canMove = true;
 
     private Rigidbody rb;
-    private Animator anim;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -81,7 +81,7 @@ public class PlayerControl : MonoBehaviour
 #pragma warning restore CS0618 // Type or member is obsolete
     }
 
-    private void PlayerMove()
+	public void PlayerMove()
     {
         Vector3 v = rb.velocity;
         v.z = speed;
