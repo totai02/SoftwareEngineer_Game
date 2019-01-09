@@ -18,13 +18,13 @@ public class PlayerControl : MonoBehaviour
 
 	public float stepWidth = 17;
 
-    private bool isGrounded;
+    public bool isGrounded;
 
     private float globalGravity = -9.81f;
 
 	public bool canMove = true;
 
-    private Rigidbody rb;
+	public Rigidbody rb;
     public Animator anim;
 
     // Use this for initialization

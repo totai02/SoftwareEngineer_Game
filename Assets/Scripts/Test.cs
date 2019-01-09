@@ -42,9 +42,9 @@ public class TestPlayerPossition
 			//{
 			//	yield break;
 			//}
-				yield return new WaitUntil(()=>player.GetComponent<Rigidbody>().velocity.y > 0);
-				yield return new WaitForSeconds(0.2f);
-				if ( !script.anim.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+			yield return new WaitUntil(()=>player.GetComponent<Rigidbody>().velocity.y > 0);
+			yield return new WaitForSeconds(0.1f);
+			if ( !script.anim.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
 			{
 				Debug.Log("Jump fail");
 				yield break;
@@ -63,13 +63,17 @@ public class TestPlayerPossition
 		var script = player.GetComponent<PlayerControl>();
 		while (true)
 		{
-			yield return new WaitWhile(() => player.GetComponent<Rigidbody>().velocity.y < 0);
-			if (!script.anim.GetCurrentAnimatorStateInfo(0).IsName("Fall"))
+			//yield return new WaitForSeconds(1);
+		//	yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+			yield return new WaitUntil(() => player.GetComponent<Rigidbody>().velocity.y < 0 );
+			yield return new WaitForSeconds(0.3f);
+			if (!script.anim.GetCurrentAnimatorStateInfo(0).IsName("Fall") && script.isGrounded == false&&player.GetComponent<Rigidbody>().velocity.y < 0 )
 			{
 				Debug.Log("Fall fail");
 				yield break;
 			}
-		}	}
+		}
+	}
 
 
 	void SetupScene()
