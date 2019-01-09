@@ -46,12 +46,6 @@ public class PlayerControl : MonoBehaviour
         float distance = Vector3.Distance(transform.position, groundCheck.position);
         isGrounded = Physics.Raycast(transform.position, groundCheck.position - transform.position, distance, 1 << 0);
 
-        if (!isGrounded)
-        {
-            distance = Vector3.Distance(transform.position, frontCheck.position);
-            isGrounded = Physics.Raycast(transform.position, frontCheck.position - transform.position, distance, 1 << 0);
-        }
-
         if (isGrounded)
         {
             anim.SetBool("ground", true);
